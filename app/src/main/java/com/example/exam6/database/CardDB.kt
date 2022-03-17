@@ -14,5 +14,4 @@ data class CardDB (
     val expireData: String,
     val cvv: Long,
     val isActive: Boolean,
-
 )

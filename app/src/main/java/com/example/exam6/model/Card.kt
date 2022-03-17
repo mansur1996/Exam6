@@ -8,8 +8,9 @@ data class Card (
     val cardNumber: String,
     @SerializedName("card_name")
     val cardName: String,
-    @SerializedName("expire_data")
+    @SerializedName("expire_date")
     val expireData: String,
+
     val cvv: Long,
     val isActive: Boolean,
 )

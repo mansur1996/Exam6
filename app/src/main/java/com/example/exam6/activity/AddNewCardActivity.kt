@@ -34,22 +34,22 @@ class AddNewCardActivity : AppCompatActivity() {
         svv = findViewById(R.id.et_svv)
         addBtn = findViewById(R.id.btn_add)
 
-        if(cardNumber.text.toString() != null && cardName.text.toString() != null && expireDate.text.toString() != null && svv.text.toString() != null){
-            id++
-            val card = Card(
-                id.toString(),
-                cardNumber.text.toString(),
-                cardName.text.toString(),
-                expireDate.text.toString(),
-                svv.text.toString().toLong(),
-                true
-            )
+        addBtn.setOnClickListener {
 
-            addBtn.setOnClickListener {
+            if(cardNumber.text.isNotEmpty() && cardName.text.isNotEmpty() && expireDate.text.isNotEmpty() && svv.text.isNotEmpty()){
+                val card = Card(
+                    id.toString(),
+                    cardNumber.text.toString(),
+                    cardName.text.toString(),
+                    expireDate.text.toString(),
+                    svv.text.toString().toLong(),
+                    true
+                )
                 addToDatabase(card)
+
+            }else{
+                Toast.makeText(applicationContext, "Fill of fields", Toast.LENGTH_SHORT).show()
             }
-        }else{
-            Toast.makeText(applicationContext, "Fill of fields", Toast.LENGTH_SHORT).show()
         }
 
 
